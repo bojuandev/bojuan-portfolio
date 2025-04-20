@@ -1,1 +1,16 @@
 @import "tailwindcss";
+:root {
+    --primary: #009DAE;
+    --secondary: #FF4F6E
+}
+
+body {
+    font-family: "Questrial", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Poppins", sans-serif;
+  }

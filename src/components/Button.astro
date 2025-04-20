@@ -1,0 +1,30 @@
+---
+import Github from "../assets/github.svg";
+import Link from "../assets/link.svg";
+
+interface Props {
+  variant?: "primary" | "secondary";
+  showLeftIcon?: boolean;
+  leftIcon?: "github" | "link";
+}
+
+const { variant = "primary", showLeftIcon, leftIcon } = Astro.props;
+
+const getIcon = () => {
+  if (leftIcon === "github") {
+    return Github;
+  }
+
+  return Link;
+};
+
+const IconComponent = getIcon();
+---
+
+<button
+  class={`flex gap-2 items-center px-6 py-3 rounded-lg transition hover:opacity-60 trans ${variant === "primary" ? "bg-(--primary) text-white" : "bg-white text-(--primary) border  border-(--primary) "}`}
+>
+  {showLeftIcon && <IconComponent />}
+
+  <slot />
+</button>

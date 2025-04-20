@@ -1,5 +1,6 @@
 ---
 import BojuanLogo from "../assets/bojuan-logo.svg";
+import Button from "../components/Button.astro";
 
 const navItems = [
   {
@@ -25,17 +26,17 @@ const navItems = [
 ];
 ---
 
-<header class="flex justify-center items-center py-6 ">
+<header class="flex justify-center items-center py-6">
   <nav class="flex justify-between items-center max-w-5xl w-full">
     <a aria-label="bojuan home" href="/#home">
       <BojuanLogo class="w-20 h-11" />
     </a>
 
-    <div class="flex">
+    <div class="flex items-center gap-4">
       {
         navItems.map((link) => (
           <a
-            class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500"
+            class="relative block px-2 py-2 text-xl transition hover:text-blue-500 dark:hover:text-blue-500"
             aria-label={link.ariaLabel}
             href={link.url}
           >
@@ -43,6 +44,7 @@ const navItems = [
           </a>
         ))
       }
+      <Button>Download CV</Button>
     </div>
   </nav>
 </header>
