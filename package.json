@@ -9,6 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource/poppins": "^5.2.5",
+    "@fontsource/questrial": "^5.2.5",
     "astro": "^5.7.4"
   }
 }

@@ -1,14 +1,33 @@
+---
+import "@fontsource/questrial";
+import "@fontsource/poppins/600.css";
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>bojuan.dev</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>bojuan.dev</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
+<style is:global>
+  body {
+    font-family: "Questrial", sans-serif;
+    letter-spacing: 1px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Poppins", sans-serif;
+	letter-spacing: 0px;
+  }
+</style>
