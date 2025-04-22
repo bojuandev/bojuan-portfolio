@@ -1,0 +1,29 @@
+---
+import Briefcase from "../assets/briefcase.svg"
+
+interface Props {
+  title: string;
+  icon?: "briefcase" | "link";
+}
+
+const { title, icon = "briefcase" } = Astro.props;
+
+const getIcon = () => {
+  if (icon === "briefcase") {
+    return Briefcase;
+  }
+
+  return Briefcase;
+};
+
+const IconComponent = getIcon();
+---
+
+<div class="flex gap-3 items-center">
+  <div>
+    <IconComponent />
+  </div>
+  <h2 class="text-(--secondary) text-2xl">
+    {title}
+  </h2>
+</div>
