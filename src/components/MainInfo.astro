@@ -1,11 +1,17 @@
 ---
-import Tag from "../components/Tag.astro"
+import Tag from "./Tag.astro"
+import ProfilePicture from "./ProfilePicture.astro"
 ---
 
-<section class="flex flex-col gap-5">
-  <h1 class="text-(--secondary) text-4xl">Hello, I’m Bryan Juanacio</h1>
-  <p class="text-5xl leading-12">
-    Frontend Developer<br /> Mobile Developer<br /> UX Engineer
-  </p>
-  <Tag> Available to work</Tag>
+<section class="flex gap-8 justify-center items-center mt-12">
+  <div>
+    <ProfilePicture />
+  </div>
+  <div class="flex flex-col gap-5">
+    <h1 class="text-(--secondary) text-4xl">Hello, I’m Bryan Juanacio</h1>
+    <p class="text-5xl leading-12">
+      Frontend Developer<br /> Mobile Developer<br /> UX Engineer
+    </p>
+    <Tag> Available to work</Tag>
+  </div>
 </section>
