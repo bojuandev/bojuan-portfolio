@@ -1,6 +1,7 @@
 ---
 import Tag from "./Tag.astro"
 import ProfilePicture from "./ProfilePicture.astro"
+import LinkIcon from "./LinkIcon.astro"
 ---
 
 <section class="flex gap-8 justify-center items-center mt-12">
@@ -13,5 +14,11 @@ import ProfilePicture from "./ProfilePicture.astro"
       Frontend Developer<br /> Mobile Developer<br /> UX Engineer
     </p>
     <Tag> Available to work</Tag>
+    <div class="h-px w-2xs bg-gray-300"></div>
+    <div class="flex gap-6">
+      <LinkIcon href="#" icon="github" />
+      <LinkIcon href="#" icon="linkedin" />
+      <LinkIcon href="#" icon="mail" />
+    </div>
   </div>
 </section>

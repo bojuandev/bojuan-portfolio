@@ -1,0 +1,34 @@
+---
+import Github from "../assets/github-filled.svg";
+import Linkedin from "../assets/linkedin.svg";
+import Mail from "../assets/mail-filled.svg";
+
+interface Props {
+  href: string;
+  icon?: "github" | "linkedin" | "mail";
+}
+
+const { href, icon = "github" } = Astro.props;
+
+const getIcon = () => {
+  if (icon === "github") {
+    return Github;
+  }
+
+  if (icon === "mail") {
+    return Mail;
+  }
+
+  return Linkedin;
+};
+
+const IconComponent = getIcon();
+---
+
+<div
+  class="flex justify-center items-center size-10 rounded-full text-(--primary) transition hover:opacity-60 border-[2px] border-(--primary)"
+>
+  <a href={href}>
+    <IconComponent />
+  </a>
+</div>

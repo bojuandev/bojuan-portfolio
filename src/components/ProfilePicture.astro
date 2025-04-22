@@ -1,6 +1,6 @@
 <div class="h-[460px] w-[500px] relative">
   <svg
-    class="absolute top-16 right-0"
+    class="absolute top-16 right-0 first-circle"
     width="211"
     height="211"
     viewBox="0 0 211 211"
@@ -11,7 +11,7 @@
   </svg>
 
   <svg
-    class="absolute bottom-10 left-0"
+    class="absolute bottom-10 left-0 second-circle"
     width="258"
     height="258"
     viewBox="0 0 258 258"
@@ -23,7 +23,7 @@
   </svg>
 
   <svg
-    class="absolute bottom-10 right-1/5"
+    class="absolute bottom-10 right-1/5 third-circle"
     width="75"
     height="75"
     viewBox="0 0 75 75"
@@ -34,8 +34,42 @@
   </svg>
 
   <img
-    class="h-full absolute top-0 left-1/8 z-1"
+    class="h-full absolute top-0 left-1/8 z-1 profile"
     src="/pictures/bryan-juanacio.webp"
     alt="Bryan Juanacio"
   />
 </div>
+
+<style>
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeInSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .first-circle {
+    animation: fadeInSlideUp 0.5s ease-out 0s forwards;
+  }
+  .second-circle {
+    animation: fadeInSlideUp 0.7s ease-out 0s forwards;
+  }
+  .third-circle {
+    animation: fadeInSlideUp 0.9s ease-out 0s forwards;
+  }
+
+  .profile {
+    animation: fadeIn 0.9s ease-out 0s forwards;
+  }
+</style>
