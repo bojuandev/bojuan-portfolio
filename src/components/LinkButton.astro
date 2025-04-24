@@ -1,0 +1,19 @@
+---
+import RightArrow from "../assets/right-arrow.svg";
+
+interface Props {
+  label: string;
+  href: string;
+}
+
+const { href, label } = Astro.props;
+---
+
+<div
+  class="w-fit flex justify-center items-center text-(--primary) transition hover:opacity-60"
+>
+  <a href={href} class="flex gap-2">
+    <span>{label}</span>
+    <RightArrow />
+  </a>
+</div>

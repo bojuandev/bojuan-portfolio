@@ -1,8 +1,35 @@
+---
+import { dateFormatter } from '../utils/date-formatter';
+import LinkButton from './LinkButton.astro';
+
+interface Props {
+  company: string;
+  companyLogo?: string;
+  positionInTheCompany: string;
+  isCurrentCompany?: boolean;
+  startDate: Date;
+  endDate: Date;
+  description: string;
+  redirectLink?: string;
+}
+
+const {
+  company,
+  description,
+  endDate,
+  positionInTheCompany,
+  startDate,
+  companyLogo,
+  isCurrentCompany,
+  redirectLink,
+} = Astro.props;
+---
+
 <div class="flex gap-8">
   <div class="flex flex-col items-center w-10">
     <img
       class="size-10 rounded-full border border-gray-300 object-cover"
-      src="/pictures/logo-bojuan.webp"
+      src={companyLogo}
     />
 
     <div class="bg-gray-300 w-px flex-1"></div>
@@ -10,18 +37,18 @@
 
   <div class="flex flex-1 gap-10 pb-6">
     <div class="flex flex-col w-3xl">
-      <h3 class="text-(--primary) text-xl">UX Engineer</h3>
-      <span class="font-poppins text-xl">bojuanDev</span>
-      <span class="text-xl">Currently</span>
+      <h3 class="text-(--primary) text-xl">{positionInTheCompany}</h3>
+      <span class="font-poppins text-xl">{company}</span>
+      <span class="text-xl"
+        >{isCurrentCompany ? "Currently" : dateFormatter(startDate, endDate)}</span
+      >
     </div>
 
-    <div>
+    <div class="flex flex-col gap-2">
       <p>
-        Developed and successfully launched the application for Aseguradora del
-        Sur, Ecuador's leading insurance company, using a clean architecture and
-        the Flutter framework. Leveraging native modules with Kotlin and Swift,
-        I contributed to a seamless and efficient application.
+        {description}
       </p>
+      {redirectLink ? <LinkButton href={redirectLink} label='More Information'/> : null}
     </div>
   </div>
 </div>

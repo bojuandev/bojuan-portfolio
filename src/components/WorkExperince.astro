@@ -1,13 +1,35 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro"
-import TitleSection from "./TitleSection.astro"
----
-<section class="flex flex-col justify-center max-w-5xl gap-8 m-auto mt-12">
-    <TitleSection title="Work experience" icon="briefcase"/>
+import ExperienceItem from "./ExperienceItem.astro";
+import TitleSection from "./TitleSection.astro";
 
-    <div>
-        <ExperienceItem />
-        <ExperienceItem />
-        <ExperienceItem />
-    </div>
+const workExperiences = [
+  {
+    company: "bojuanDev",
+    description:
+      "Developed and successfully launched the application for Aseguradora del Sur, Ecuador's leading insurance company, using a clean architecture and the Flutter framework. Leveraging native modules with Kotlin and Swift, I contributed to a seamless and efficient application.",
+    endDate: new Date(2019, 3, 15),
+    positionInTheCompany: "UX Engineer",
+    startDate: new Date(2018, 3, 15),
+    companyLogo: "/pictures/logo-bojuan.webp",
+    isCurrentCompany: true,
+    redirectLink: "#",
+  },
+  {
+    company: "Banco Pichincha",
+    description:
+      "Developed and successfully launched the application for Aseguradora del Sur, Ecuador's leading insurance company, using a clean architecture and the Flutter framework. Leveraging native modules with Kotlin and Swift, I contributed to a seamless and efficient application.",
+    endDate: new Date(2019, 3, 15),
+    positionInTheCompany: "Full Stack developer",
+    startDate: new Date(2019, 7, 15),
+    companyLogo: "/pictures/logo-bojuan.webp"
+  },
+];
+---
+
+<section class="flex flex-col justify-center max-w-5xl gap-8 m-auto mt-12">
+  <TitleSection title="Work experience" icon="briefcase" />
+
+  <div>
+    {workExperiences.map((item) => <ExperienceItem {...item} />)}
+  </div>
 </section>
