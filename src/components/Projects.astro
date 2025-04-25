@@ -1,0 +1,21 @@
+---
+import TitleSection from "./TitleSection.astro";
+import DetailProject from "./DetailProject.astro";
+---
+
+<section class="flex flex-col justify-center max-w-5xl gap-8 m-auto mt-12">
+  <TitleSection title="Projects" icon="briefcase" />
+
+  <div class="flex gap-24">
+    <div class="flex">
+      <img
+        src="/pictures/logo-bojuan.webp"
+        alt="logo"
+        class="w-96 h-42 object-cover"
+      />
+    </div>
+    <div class="flex-1">
+      <DetailProject />
+    </div>
+  </div>
+</section>
