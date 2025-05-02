@@ -1,22 +1,45 @@
 ---
 import Button from "./Button.astro";
+import TechLabel from "./TechLabel.astro";
+import { type TechType } from "../types/tech"
 
+
+interface Props {
+  title: string;
+  detail: string;
+  githubLink?: string;
+  projectLink?: string;
+  tags?: TechType[];
+}
+
+const { title, detail, githubLink, projectLink, tags } = Astro.props;
 ---
-<div class="flex flex-col">
+
+<div class="flex flex-col gap-4">
   <header>
-    <h3>Shuar VR - Know about the culture Shuar</h3>
+    <h3 class="text-(--primary)">{title}</h3>
   </header>
   <div class="flex gap-2">
-    <span>Next</span>
-    <span>Taildwind CSS</span>
+    {tags?.map((item) => <TechLabel tech={item} />)}
   </div>
   <p>
-    Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes.
-    +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.
+    {detail}
   </p>
 
   <div class="flex gap-4">
-    <Button variant="secondary" showLeftIcon leftIcon="github">Code</Button>
-    <Button variant="secondary" showLeftIcon leftIcon="github">Preview</Button>
+    {
+      githubLink ? (
+        <Button variant="secondary" showLeftIcon leftIcon="github">
+          Code
+        </Button>
+      ) : null
+    }
+    {
+      projectLink ? (
+        <Button variant="secondary" showLeftIcon leftIcon="github">
+          Preview
+        </Button>
+      ) : null
+    }
   </div>
 </div>

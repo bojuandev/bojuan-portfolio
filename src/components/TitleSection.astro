@@ -1,9 +1,11 @@
 ---
 import Briefcase from "../assets/briefcase.svg"
+import CodeSvg from "../assets/code.svg"
+
 
 interface Props {
   title: string;
-  icon?: "briefcase" | "link";
+  icon?: "briefcase" | "link" | "code";
 }
 
 const { title, icon = "briefcase" } = Astro.props;
@@ -13,7 +15,9 @@ const getIcon = () => {
     return Briefcase;
   }
 
-  return Briefcase;
+  if(icon === "code") return CodeSvg
+
+  return CodeSvg;
 };
 
 const IconComponent = getIcon();

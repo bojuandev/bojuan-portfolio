@@ -1,0 +1,1 @@
+export type TechType = "Next.js" | "Tailwind CSS"

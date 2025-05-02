@@ -1,0 +1,16 @@
+---
+interface Props {
+  photo: string;
+  alt?: string;
+}
+
+const { alt, photo } = Astro.props;
+---
+
+<div class="w-96 h-42 flex border overflow-hidden bg-cover bg-no-repeat rounded-md">
+  <img
+    src={photo}
+    alt={alt ?? "logo"}
+    class="w-96 h-42 object-cover transition duration-300 ease-in-out hover:scale-110"
+  />
+</div>

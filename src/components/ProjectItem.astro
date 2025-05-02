@@ -1,0 +1,23 @@
+---
+import DetailProject from "./DetailProject.astro";
+import ProjectPhoto from "./ProjectPhoto.astro";
+import { type TechType } from "../types/tech"
+
+interface Props {
+  photo: string;
+  title: string;
+  detail: string;
+  githubLink?: string;
+  projectLink?: string;
+  tags?: TechType[];
+}
+
+const { photo } = Astro.props;
+---
+
+<div class="flex gap-24">
+  <ProjectPhoto photo={photo} />
+  <div class="flex-1">
+    <DetailProject {...Astro.props}/>
+  </div>
+</div>

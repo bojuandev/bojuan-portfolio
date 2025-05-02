@@ -1,0 +1,33 @@
+---
+import NextSvg from "../assets/next-js.svg";
+import TailwindSvg from "../assets/tailwind.svg";
+import { type TechType } from "../types/tech";
+
+interface Props {
+  tech: TechType;
+}
+
+const { tech } = Astro.props;
+
+const getSvg = () => {
+  if (tech === "Next.js") return NextSvg;
+
+  return TailwindSvg;
+};
+
+const getBgColor =() => {
+    if(tech === "Next.js") return "bg-black"
+    return "bg-[#133258]"
+}
+
+const ComponentSvg = getSvg();
+const bgColor = getBgColor()
+---
+
+<div class=`flex items-center gap-1 px-2 py-1 rounded-2xl ${bgColor}`>
+  <ComponentSvg class="w-4 h-4" />
+
+  <span class="text-white">
+    {tech}
+  </span>
+</div>

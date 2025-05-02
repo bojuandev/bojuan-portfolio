@@ -1,21 +1,35 @@
 ---
 import TitleSection from "./TitleSection.astro";
-import DetailProject from "./DetailProject.astro";
+import ProjectItem from "./ProjectItem.astro";
+import type { TechType } from "../types/tech";
+
+const projects = [
+  {
+    photo: "/pictures/logo-bojuan.webp",
+    title: "Shuar VR - Know about the culture Shuar",
+    detail:
+      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
+    githubLink: "a",
+    projectLink: "a",
+    tags: ["Next.js", "Taildwind CSS"] as TechType[],
+  },
+  {
+    photo: "/pictures/logo-bojuan.webp",
+    title: "Shuar VR - Know about the culture Shuar",
+    detail:
+      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
+    githubLink: "a",
+    projectLink: "a",
+    tags: ["Next.js", "Taildwind CSS"] as TechType[],
+  },
+];
 ---
 
 <section class="flex flex-col justify-center max-w-5xl gap-8 m-auto mt-12">
-  <TitleSection title="Projects" icon="briefcase" />
+  <TitleSection title="Projects" icon="code" />
 
-  <div class="flex gap-24">
-    <div class="flex">
-      <img
-        src="/pictures/logo-bojuan.webp"
-        alt="logo"
-        class="w-96 h-42 object-cover"
-      />
-    </div>
-    <div class="flex-1">
-      <DetailProject />
-    </div>
+  <div class="flex flex-col gap-16">
+    {projects.map((item) => <ProjectItem {...item} />)}
   </div>
+
 </section>
