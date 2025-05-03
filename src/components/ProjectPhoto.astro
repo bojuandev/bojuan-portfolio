@@ -7,9 +7,10 @@ interface Props {
 const { alt, photo } = Astro.props;
 ---
 
-<div class="w-96 h-42 flex border overflow-hidden bg-cover bg-no-repeat rounded-md">
+<div class="w-96 h-42 flex overflow-hidden bg-cover bg-no-repeat rounded-md">
   <img
     src={photo}
+    loading="lazy"
     alt={alt ?? "logo"}
     class="w-96 h-42 object-cover transition duration-300 ease-in-out hover:scale-110"
   />

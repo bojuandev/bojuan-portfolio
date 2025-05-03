@@ -28,7 +28,7 @@ const IconComponent = getIcon();
 <div
   class="flex justify-center items-center size-10 rounded-full text-(--primary) transition hover:opacity-60 border-[3px] border-(--primary)"
 >
-  <a href={href}>
+  <a href={href} aria-label={icon} target="_blank" rel="noopener noreferrer">
     <IconComponent />
   </a>
 </div>
