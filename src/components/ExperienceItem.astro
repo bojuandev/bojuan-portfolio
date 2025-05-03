@@ -36,8 +36,8 @@ const {
     <div class="bg-gray-300 w-px flex-1"></div>
   </div>
 
-  <div class="flex flex-1 gap-10 pb-6">
-    <div class="flex flex-col w-3xl">
+  <div class="flex flex-col md:flex-row flex-1 gap-10 pb-6">
+    <div class="flex flex-col min-w-3xs">
       <h3 class="text-(--primary) text-xl">{positionInTheCompany}</h3>
       <span class="font-poppins text-xl">{company}</span>
       <span class="text-xl"
@@ -45,7 +45,7 @@ const {
       >
     </div>
 
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-2 flex-1">
       <p>
         {description}
       </p>

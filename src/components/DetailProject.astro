@@ -26,7 +26,7 @@ const { title, detail, githubLink, projectLink, tags } = Astro.props;
     {detail}
   </p>
 
-  <div class="flex gap-4">
+  <div class="flex gap-4 justify-center md:justify-start">
     {
       githubLink ? (
         <Button variant="secondary" showLeftIcon leftIcon="github">
