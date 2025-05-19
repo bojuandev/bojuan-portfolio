@@ -1,6 +1,7 @@
 ---
 import NextSvg from "../assets/next-js.svg";
 import TailwindSvg from "../assets/tailwind.svg";
+import ThreeSvg from "../assets/threejs-logo.svg";
 import { type TechType } from "../types/tech";
 
 interface Props {
@@ -12,11 +13,13 @@ const { tech } = Astro.props;
 const getSvg = () => {
   if (tech === "Next.js") return NextSvg;
 
+  if (tech === "Three.js") return ThreeSvg;
+
   return TailwindSvg;
 };
 
 const getBgColor =() => {
-    if(tech === "Next.js") return "bg-black"
+    if(["Next.js", "Three.js"].includes(tech)) return "bg-black"
     return "bg-[#133258]"
 }
 

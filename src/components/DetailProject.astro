@@ -1,8 +1,7 @@
 ---
 import Button from "./Button.astro";
 import TechLabel from "./TechLabel.astro";
-import { type TechType } from "../types/tech"
-
+import { type TechType } from "../types/tech";
 
 interface Props {
   title: string;
@@ -29,16 +28,20 @@ const { title, detail, githubLink, projectLink, tags } = Astro.props;
   <div class="flex gap-4 justify-center md:justify-start">
     {
       githubLink ? (
-        <Button variant="secondary" showLeftIcon leftIcon="github">
-          Code
-        </Button>
+        <a href={githubLink} target="_blank">
+          <Button variant="secondary" showLeftIcon leftIcon="github">
+            Code
+          </Button>
+        </a>
       ) : null
     }
     {
       projectLink ? (
-        <Button variant="secondary" showLeftIcon leftIcon="link">
-          Preview
-        </Button>
+        <a href={projectLink} target="_blank">
+          <Button variant="secondary" showLeftIcon leftIcon="link">
+            Preview
+          </Button>
+        </a>
       ) : null
     }
   </div>
